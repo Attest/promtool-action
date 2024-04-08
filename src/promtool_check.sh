@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 function promtool_check {
 
     # gather check promtool output
