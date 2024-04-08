@@ -45,7 +45,9 @@ ${check_output}
         echo "${check_payload}" | curl -s -S -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" --header "Content-Type: application/json" --data @- "${check_comment_url}" > /dev/null
     fi
 
-#    echo ::set-output name=promtool_output::${check_output}
+
+    # Updated to new GITHUB_OUTPUT format https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+    # Modified to support multi-line output https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#multiline-strings
     echo "promtool_output<<EOF" >> "$GITHUB_OUTPUT"
     echo "${check_output}" >> "$GITHUB_OUTPUT"
     echo "EOF" >> "$GITHUB_OUTPUT"
