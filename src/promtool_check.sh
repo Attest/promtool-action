@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ex
-
 function promtool_check {
 
     # gather check promtool output
@@ -44,7 +42,6 @@ ${check_output}
         echo "check: info: commenting on the pull request"
         echo "${check_payload}" | curl -s -S -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" --header "Content-Type: application/json" --data @- "${check_comment_url}" > /dev/null
     fi
-
 
     # Updated to new GITHUB_OUTPUT format https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
     # Modified to support multi-line output https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#multiline-strings
