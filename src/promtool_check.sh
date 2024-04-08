@@ -46,7 +46,8 @@ ${check_output}
     fi
 
 #    echo ::set-output name=promtool_output::${check_output}
-    echo "promtool_output=${check_output}"
-    echo "promtool_output=${check_output}" >> "$GITHUB_OUTPUT"
+    echo "promtool_output=<<EOF" >> "$GITHUB_OUTPUT"
+    echo "${check_output}" >> "$GITHUB_OUTPUT"
+    echo "EOF" >> "$GITHUB_OUTPUT"
     exit ${check_exit_code}
 }
