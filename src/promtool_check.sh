@@ -43,6 +43,6 @@ ${check_output}
         echo "${check_payload}" | curl -s -S -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" --header "Content-Type: application/json" --data @- "${check_comment_url}" > /dev/null
     fi
 
-    echo ::set-output name=promtool_output::${check_output}
+    echo "promtool_output=${check_output}" >> $GITHUB_OUTPUT
     exit ${check_exit_code}
 }
