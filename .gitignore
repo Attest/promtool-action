@@ -354,3 +354,7 @@ MigrationBackup/
 
 # idea files
 .idea/
+
+# Claude AI local settings
+CLAUDE.local.md
+.claude/settings.local.json
